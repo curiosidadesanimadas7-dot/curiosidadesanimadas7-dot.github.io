@@ -25,9 +25,10 @@
 
 <h2>Qué es</h2>
 <p>
-  Es un programa que corre en un servidor en la nube contratado por su autor (Modal) y que hace
-  una sola cosa: coger un vídeo ya terminado y subirlo al canal de YouTube de su autor, dejándolo
-  programado para publicarse a una hora concreta, con su título, su descripción y su portada.
+  Es un programa que corre de forma automática en GitHub Actions y que hace dos cosas sobre el canal
+  de YouTube de su autor: subir cada vídeo ya terminado, dejándolo programado para publicarse a una
+  hora concreta con su título, su descripción y su portada, y leer una vez por semana las
+  estadísticas del canal para preparar un resumen.
 </p>
 
 <h2>Quién la usa</h2>
@@ -38,14 +39,16 @@
 
 <h2>Qué permisos pide a Google</h2>
 <p>
-  Uno solo, el mínimo que existe para esta tarea:
+  Tres, los mínimos para estas dos tareas:
 </p>
 <ul>
   <li><code>https://www.googleapis.com/auth/youtube.upload</code> — subir vídeos al canal y ponerles portada.</li>
+  <li><code>https://www.googleapis.com/auth/youtube.readonly</code> — ver, sin cambiar nada, la información del canal y de sus vídeos.</li>
+  <li><code>https://www.googleapis.com/auth/yt-analytics.readonly</code> — ver, sin cambiar nada, las estadísticas del canal.</li>
 </ul>
 <p>
-  Con ese permiso <strong>no</strong> se pueden leer los datos de la cuenta, ni borrar nada, ni
-  modificar vídeos ya publicados, ni acceder a comentarios, suscriptores o estadísticas.
+  Con estos permisos <strong>no</strong> se puede borrar nada, ni modificar vídeos ya publicados,
+  ni escribir comentarios, ni acceder a otros servicios de la cuenta de Google.
 </p>
 
 <h2>Los vídeos</h2>

@@ -22,53 +22,66 @@
 <body>
 
 <h1>Política de privacidad</h1>
-<p class="fecha">Aplicación: <strong>Subida Curiosidades</strong>. Última actualización: 25 de noviembre de 2026.</p>
+<p class="fecha">Aplicación: <strong>Subida Curiosidades</strong>. Última actualización: 28 de noviembre de 2026.</p>
 
 <h2>Resumen</h2>
 <p>
   Esta aplicación no recoge, no almacena y no comparte datos personales de nadie. La usa únicamente
-  su autor, desde un servidor en la nube que él mismo contrata (Modal), para subir vídeos a su
-  propio canal de YouTube.
+  su autor, de forma automática con GitHub Actions, para subir vídeos a su propio canal de YouTube
+  y para leer las estadísticas de ese mismo canal y preparar un resumen semanal.
 </p>
 
 <h2>Qué datos se tratan</h2>
 <ul>
   <li>
     <strong>Un permiso de acceso a YouTube.</strong> Al autorizar la aplicación, Google entrega un
-    testigo (<em>token</em>) que permite subir vídeos al canal. Ese testigo se guarda cifrado como
-    secreto en la cuenta de Modal del autor, solo lo usa el programa de subida y no se comparte.
+    testigo (<em>token</em>) que permite subir vídeos al canal y leer sus estadísticas. Ese testigo
+    se guarda cifrado como secreto en el repositorio de GitHub del autor, solo lo usan sus programas
+    y no se comparte.
   </li>
   <li>
     <strong>Los vídeos y sus textos.</strong> Son archivos creados en ese mismo servidor y se
     envían a YouTube, que es el destino previsto.
   </li>
+  <li>
+    <strong>Las estadísticas del propio canal.</strong> Una vez por semana se leen datos agregados
+    del canal del autor (visualizaciones, tiempo de visualización, retención, me gusta, compartidos y
+    suscriptores ganados o perdidos). Son totales y medias: no incluyen datos de ningún espectador
+    concreto. Con ellos se escribe un resumen que se publica en el repositorio de GitHub del autor.
+  </li>
 </ul>
 <p>
-  No hay base de datos de usuarios, ni web pública de la aplicación, ni analítica, ni cookies, ni
-  formularios de contacto.
+  No hay base de datos de usuarios, ni cookies, ni formularios de contacto, ni se recoge
+  información de las personas que ven los vídeos.
 </p>
 
 <h2>Qué permisos se piden a Google</h2>
 <p>
-  Solo uno: <code>https://www.googleapis.com/auth/youtube.upload</code>, que permite subir vídeos al
-  canal y asignarles una portada.
+  Tres, todos sobre el canal del propio autor:
 </p>
+<ul>
+  <li><code>https://www.googleapis.com/auth/youtube.upload</code>: subir vídeos y asignarles una portada.</li>
+  <li><code>https://www.googleapis.com/auth/youtube.readonly</code>: ver (sin cambiar nada) la información del canal y de sus vídeos.</li>
+  <li><code>https://www.googleapis.com/auth/yt-analytics.readonly</code>: ver (sin cambiar nada) las estadísticas del canal.</li>
+</ul>
 <p>
-  Ese permiso <strong>no</strong> da acceso a leer los datos de la cuenta de Google, ni a borrar
-  contenido, ni a modificar vídeos ya publicados, ni a consultar comentarios, suscriptores,
-  estadísticas o el historial de visualizaciones.
+  Estos permisos <strong>no</strong> permiten borrar contenido, ni modificar vídeos ya publicados,
+  ni escribir comentarios, ni acceder a otros servicios de la cuenta de Google como el correo.
 </p>
 
 <h2>Con quién se comparte</h2>
 <p>
-  Con nadie. La única comunicación que hace la aplicación es con la API de YouTube, propiedad de
-  Google, para subir el vídeo. No se transmite información a terceros, ni se vende, ni se cede.
+  Con nadie. La aplicación solo se comunica con las API de YouTube, propiedad de Google, para subir
+  el vídeo y leer las estadísticas. El resumen semanal, con cifras agregadas del canal, se guarda en
+  el repositorio público de GitHub del autor. No se transmite información a terceros, ni se vende,
+  ni se cede.
 </p>
 
 <h2>Cuánto se conserva</h2>
 <p>
   El testigo de acceso se conserva mientras la aplicación esté autorizada. Los vídeos se conservan
-  en el almacenamiento privado del autor en Modal y en su canal de YouTube.
+  en su canal de YouTube (y una copia de trabajo durante 7 días en GitHub). Los resúmenes semanales
+  se conservan en el repositorio del autor hasta que él los borre.
 </p>
 
 <h2>Cómo retirar el permiso</h2>
@@ -76,7 +89,7 @@
   En cualquier momento, desde
   <a href="https://myaccount.google.com/permissions">la página de permisos de la cuenta de Google</a>,
   retirando el acceso a «Subida Curiosidades». A partir de ese momento la aplicación deja de poder
-  subir nada.
+  subir nada y de leer las estadísticas.
 </p>
 
 <h2>Uso de los servicios de YouTube</h2>
